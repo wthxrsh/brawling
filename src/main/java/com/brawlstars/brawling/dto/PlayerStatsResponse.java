@@ -13,6 +13,7 @@ public record PlayerStatsResponse(
 
         int brawlerCount,
         String highestTrophyBrawler,
+        int highestTrophyBrawlerId,
         int highestBrawlerTrophies,
 
         int highestBrawlerCurrentTrophies,

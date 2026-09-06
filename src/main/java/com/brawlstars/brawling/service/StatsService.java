@@ -55,6 +55,10 @@ public class StatsService {
                         : null,
 
                 highestBrawler != null
+                        ? safe(highestBrawler.id())
+                        : 0,
+
+                highestBrawler != null
                         ? safe(highestBrawler.highestTrophies())
                         : 0,
 
