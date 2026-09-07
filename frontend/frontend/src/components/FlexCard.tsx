@@ -23,7 +23,6 @@ import {
     Shield,
     Crown,
     Flame,
-    Star,
     Target,
     ChevronUp,
     Gem,
@@ -114,6 +113,13 @@ function FloatingParticle({
     x: number;
     size: number;
 }) {
+    const [duration] = useState(
+        () => 3 + Math.random() * 2
+    );
+    const [repeatDelay] = useState(
+        () => Math.random() * 3
+    );
+
     return (
         <motion.div
             initial={{
@@ -132,11 +138,10 @@ function FloatingParticle({
                 ],
             }}
             transition={{
-                duration: 3 + Math.random() * 2,
+                duration,
                 delay,
                 repeat: Infinity,
-                repeatDelay:
-                    Math.random() * 3,
+                repeatDelay,
                 ease: "easeOut",
             }}
             className="pointer-events-none absolute"
